@@ -1,20 +1,25 @@
-﻿Album albumTravisScott = new Album();
-albumTravisScott.Name = "Utopia";
+﻿Band travisScott = new Band("Travis Scott");
 
-Song song1 = new Song();
-song1.Name = "Hyaena";
-song1.Time = 212;
+Album albumTravisScott = new Album("Utopia");
 
-Song song2 = new Song();
-song2.Name = "Thank God";
-song2.Time = 184;
+Song song1 = new Song(travisScott, "Hyaena")
+{
+    Time = 212,
+    Available = true,
+};
+
+
+Song song2 = new Song(travisScott, "Thank God")
+{
+    Time = 184,
+    Available = false,
+};
 
 albumTravisScott.AddSong(song1);
 albumTravisScott.AddSong(song2);
-
-Band travisScott = new Band();
-travisScott.Name = "Travis Scott";
 travisScott.AddNewAlbum(albumTravisScott);
-travisScott.ShowDiscography();
 
+song1.ShowTechnicalSheet();
+song2.ShowTechnicalSheet();
 albumTravisScott.ShowAlbumSongs();
+travisScott.ShowDiscography();
