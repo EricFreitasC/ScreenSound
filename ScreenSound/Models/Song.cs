@@ -1,4 +1,6 @@
-﻿class Song
+﻿namespace ScreenSound.Models; 
+
+internal class Song
 {
     public Song(Band artist, string name)
     {
@@ -10,7 +12,6 @@
     public Band Artist { get; }
     public int Time { get; set; }
     public bool Available {  get; set; }
-    public Genre Genre { get; set; }
     public string BriefDescription => 
         $"A musica {Name} pertence à banda {Artist}";
 
